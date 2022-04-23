@@ -4,15 +4,18 @@ import androidx.room.Room
 import com.devcraft.data.BuildConfig
 import com.devcraft.data.api.data_source.GenericNetSource
 import com.devcraft.data.api.data_source.LeaguesNetSource
+import com.devcraft.data.api.data_source.StandingsNetSource
 import com.devcraft.data.api.service.GenericApi
 import com.devcraft.data.api.service.LeaguesApi
 import com.devcraft.data.hasNetwork
 import com.devcraft.data.repository.GenericRepositoryImpl
 import com.devcraft.data.repository.LeaguesRepositoryImpl
+import com.devcraft.data.repository.StandingsRepositoryImpl
 import com.devcraft.data.room.Database
 import com.devcraft.data.room.data_source.GenericDbSource
 import com.devcraft.domain.repository.GenericRepository
 import com.devcraft.domain.repository.LeaguesRepository
+import com.devcraft.domain.repository.StandingsRepository
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.Cache
@@ -26,6 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 val repositoriesModule = module {
     factory<GenericRepository> { GenericRepositoryImpl() }
     factory<LeaguesRepository> { LeaguesRepositoryImpl() }
+    factory<StandingsRepository> { StandingsRepositoryImpl() }
 }
 
 val dataProvidersModule = module {
@@ -86,5 +90,6 @@ val sourcesModule = module {
     single { GenericNetSource(get()) }
     single { get<Retrofit>().create(LeaguesApi::class.java) }
     single { LeaguesNetSource(get()) }
+    single { StandingsNetSource(get()) }
 }
 

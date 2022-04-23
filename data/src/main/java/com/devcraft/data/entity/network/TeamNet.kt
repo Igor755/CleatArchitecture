@@ -12,7 +12,7 @@ data class TeamNet (
     @SerializedName("name")
     val name: Int,
     @SerializedName("abbreviation")
-    val abbreviation: List<StandingNet>,
+    val abbreviation: String,
     @SerializedName("displayName")
     val displayName: Int,
     @SerializedName("shortDisplayName")
