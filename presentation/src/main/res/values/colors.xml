@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#4873FA</color>
+    <color name="colorPrimaryDark">#2450DA</color>
+    <color name="colorPrimaryLight">#6A86DD</color>
+    <color name="colorAccent">#4E4E4E</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorApp">#F5F6FA</color>
+    <color name="error">#EB5757</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorGrey">#808080</color>
+    <color name="colorGreyLight">#939292</color>
+    <color name="colorGreyVariant">#B5B7CB</color>
+    <color name="colorGreyVariantLight">#F2F2F2</color>
+    <color name="colorRedLight">#EE386D</color>
+    <color name="colorRedDark">#C62F5B</color>
+    <color name="colorBlack">@android:color/black</color>
+    <color name="colorTextGray">#B5B7CB</color>
+    <color name="colorLightRed">#C62F5B</color>
+    <color name="crop_shadow_color">#A3000000</color>
+    <color name="crop_shadow_wp_color">#4F000000</color>
+    <color name="crop_wp_markers">#7FFFFFFF</color>
+    <color name="color_not_active">#939292</color>
 </resources>

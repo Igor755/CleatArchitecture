@@ -8,4 +8,33 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TextButtonTranslucentStroked" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/offset_32</item>
+        <item name="android:layout_marginTop">@dimen/offset_20</item>
+        <item name="android:layout_marginEnd">@dimen/offset_32</item>
+        <item name="android:background">@drawable/bg_rounded_transparent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/offset_16</item>
+        <item name="android:paddingBottom">@dimen/offset_16</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/headline_3</item>
+    </style>
+
+    <style name="TextButton" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/offset_32</item>
+        <item name="android:layout_marginTop">@dimen/offset_20</item>
+        <item name="android:layout_marginEnd">@dimen/offset_32</item>
+        <item name="android:background">@drawable/bg_rounded_item_gradient</item>
+        <item name="android:enabled">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/offset_16</item>
+        <item name="android:paddingBottom">@dimen/offset_16</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/headline_3</item>
+    </style>
+
 </resources>

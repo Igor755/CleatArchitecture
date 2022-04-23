@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="message_no_internet">Не удалось отправить запрос на сервер.\nПроверьте ваше интернет соединение и повторите попытку</string>
+    <string name="network_exit_app">Выйти</string>
+    <string name="try_again">Повторить</string>
+    <string name="you_have_reached_limit">Вы достигли лимита попыток</string>
+    <string name="error_not_found">Ресурс не найдено</string>
+
 </resources>

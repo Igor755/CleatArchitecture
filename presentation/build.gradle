@@ -28,12 +28,12 @@ android {
             keyAlias rootProject.SIGNING_KEY_RELEASE_KEY
             keyPassword rootProject.SIGNING_KEY_RELEASE_KEY_PASSWORD
         }
-        debug {
+       /* debug {
             storeFile file(rootProject.SIGNING_KEY_DEBUG_PATH)
             storePassword rootProject.SIGNING_KEY_DEBUG_PASSWORD
             keyAlias rootProject.SIGNING_KEY_DEBUG_KEY
             keyPassword rootProject.SIGNING_KEY_DEBUG_KEY_PASSWORD
-        }
+        }*/
     }
 
     compileOptions {
@@ -101,7 +101,7 @@ dependencies {
     debugImplementation 'com.willowtreeapps.hyperion:hyperion-attr:0.9.27'
 
     /* BaseRecyclerViewAdapterHelper */
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.0-beta11'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
 
     /* firebase analytics
    use with google-services.json*/
