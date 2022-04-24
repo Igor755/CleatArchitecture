@@ -84,7 +84,7 @@ fun List<LogoNet>.mapToLogo() = this.mapTo(
 )
 
 
-fun StandingNet.mapStading() = StandingModel(team.mapToTeam(), note.map(), stats.mapToStat())
+fun StandingNet.mapStading() = StandingModel(team?.mapToTeam(), note?.map(), stats?.mapToStat())
 
 fun TeamNet.mapToTeam() = TeamModel(id, uid, location, name, abbreviation, displayName, shortDisplayName, isActive, logos.mapToLogo())
 
@@ -92,7 +92,7 @@ fun LogoNet.map() = LogoModel(href, width, height, alt,rel, lastUpdated)
 
 fun StatNet.map() = StatModel(name, displayName, shortDisplayName, description, abbreviation, type, value, displayValue, id, summary)
 
-fun NoteNet.map() = NoteModel(color, description.mapLeaguesNet(), rank)
+fun NoteNet.map() = NoteModel(color, description, rank)
 
 
 
@@ -125,7 +125,7 @@ fun List<LogoModel>.mapToLogoModel() = this.mapTo(
 )
 
 
-fun StandingModel.mapStading() = StandingNet(team.mapToTeam(), note.map(), stats.mapToStatModel())
+fun StandingModel.mapStading() = StandingNet(team?.mapToTeam(), note?.map(), stats?.mapToStatModel())
 
 fun TeamModel.mapToTeam() = TeamNet(id, uid, location, name, abbreviation, displayName, shortDisplayName, isActive, logos.mapToLogoModel())
 
@@ -133,6 +133,6 @@ fun LogoModel.map() = LogoNet(href, width, height, alt,rel, lastUpdated)
 
 fun StatModel.map() = StatNet(name, displayName, shortDisplayName, description, abbreviation, type, value, displayValue, id, summary)
 
-fun NoteModel.map() = NoteNet(color, description.mapLeaguesModel(), rank)
+fun NoteModel.map() = NoteNet(color, description, rank)
 
 

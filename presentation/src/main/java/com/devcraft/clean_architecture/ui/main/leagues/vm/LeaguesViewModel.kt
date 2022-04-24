@@ -1,6 +1,5 @@
 package com.devcraft.clean_architecture.ui.main.leagues.vm
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,7 +9,6 @@ import com.devcraft.domain.interactor.LeaguesInteractor
 import com.devcraft.domain.model.Result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class LeaguesViewModel(private val leaguesInteractor: LeaguesInteractor) : ViewModel() {
 
@@ -30,12 +28,4 @@ class LeaguesViewModel(private val leaguesInteractor: LeaguesInteractor) : ViewM
             })
         }
     }
-
-   /* fun getLeaguesFromServer2() {
-        viewModelScope.launch(Dispatchers.IO) {
-            withContext(Dispatchers.Main) {
-                _bankCardLiveData.value = interactor.getBankCards()?.mapBankCards()
-            }
-        }
-    }*/
 }

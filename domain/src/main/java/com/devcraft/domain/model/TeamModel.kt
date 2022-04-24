@@ -4,9 +4,9 @@ data class TeamModel (
     val id: String,
     val uid: String,
     val location: String,
-    val name: Int,
+    val name: String,
     val abbreviation: String,
-    val displayName: Int,
-    val shortDisplayName: Int,
-    val isActive: Int,
+    val displayName: String,
+    val shortDisplayName: String,
+    val isActive: Boolean,
     val logos: List<LogoModel>)

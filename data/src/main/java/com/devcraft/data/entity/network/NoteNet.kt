@@ -6,6 +6,6 @@ data class NoteNet (
     @SerializedName("color")
     val color: String,
     @SerializedName("description")
-    val description: List<LeagueNet>,
+    val description: String,
     @SerializedName("rank")
     val rank: Int)

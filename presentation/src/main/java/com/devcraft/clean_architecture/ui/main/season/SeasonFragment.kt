@@ -1,4 +1,4 @@
-package com.devcraft.clean_architecture.ui.main.leagues
+package com.devcraft.clean_architecture.ui.main.season
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,48 +7,46 @@ import androidx.lifecycle.Observer
 import com.devcraft.clean_architecture.R
 import com.devcraft.clean_architecture.common.BaseFragment
 import com.devcraft.clean_architecture.extension.getErrorMessageFromException
-import com.devcraft.clean_architecture.extension.navigateTo
 import com.devcraft.clean_architecture.ui.main.MainActivity
-import com.devcraft.clean_architecture.ui.main.leagues.adapter.LeaguesAdapter
-import com.devcraft.clean_architecture.ui.main.leagues.vm.LeaguesViewModel
-import com.devcraft.clean_architecture.ui.main.season.SeasonFragment
+import com.devcraft.clean_architecture.ui.main.season.adapter.SeasonAdapter
+import com.devcraft.clean_architecture.ui.main.season.vm.SeasonViewModel
 import com.devcraft.domain.model.Result
-import kotlinx.android.synthetic.main.fragment_leagues.*
+import kotlinx.android.synthetic.main.fragment_leagues.root
+import kotlinx.android.synthetic.main.fragment_season.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class LeaguesFragment : BaseFragment(R.layout.fragment_leagues)  {
+class SeasonFragment : BaseFragment(R.layout.fragment_season)  {
 
-    private val leaguesAdapter: LeaguesAdapter by inject()
-    private val leaguesViewModel: LeaguesViewModel by viewModel()
+    private val seasonViewModel: SeasonViewModel by viewModel()
+    var idLeague = "0"
+    private val seasonAdapter: SeasonAdapter by inject()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        if (arguments?.getString("id") != null) {
+            idLeague = (arguments?.getString("id")!!)
+        }
         initViews()
         initObservers()
         initListeners()
     }
 
     fun initViews(){
-        rvLeagues.adapter = leaguesAdapter
+        rvSeasons.adapter = seasonAdapter
     }
 
     fun initListeners(){
-        leaguesAdapter.onItemClickListener = { position, id ->
-            println(id)
-            navigateTo(R.id.fragment_container, SeasonFragment(), args = Bundle().apply {
-                putString("id", id)
-            }, backStackTag = SeasonFragment::class.simpleName)
-        }
+
     }
 
     fun initObservers(){
-        leaguesViewModel.getLeaguesFromServer()
-        leaguesViewModel.leaguesLiveData.observe(viewLifecycleOwner, Observer { result->
+        seasonViewModel.getSeasonFromServer(idLeague)
+        seasonViewModel.seasonLiveData.observe(viewLifecycleOwner, Observer { result->
             when(result){
                 is Result.Success->{
-                    if (result.data?.league?.isNotEmpty()!!) {
-                        leaguesAdapter.setNewData(result.data!!.league)
+                    if (result.data?.data?.standings?.isNotEmpty()!!) {
+                        seasonAdapter.setNewData(result.data!!.data.standings)
                     }
                 }
                 is Result.Error->{
@@ -58,14 +56,14 @@ class LeaguesFragment : BaseFragment(R.layout.fragment_leagues)  {
                         onNetworkError = { (activity as? MainActivity)?.showNoInternetDialog()
                             setOnConnectionChangeListener {
                                 if (it) {
-                                    leaguesViewModel.getLeaguesFromServer()
+                                    seasonViewModel.getSeasonFromServer(idLeague)
                                 }
                             }
                         },
                         onBadUser = {
                             startActivity(Intent(activity, MainActivity::class.java).apply {
-                                    flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
-                                })
+                                flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
+                            })
                             activity?.finish()
                         })
                 }

@@ -1,5 +1,6 @@
 package com.devcraft.data.api.service
 
+import com.devcraft.data.constant.ApiEndpoints
 import com.devcraft.data.entity.network.LeaguesNet
 import com.devcraft.data.entity.network.SeasonNet
 import retrofit2.Call
@@ -8,9 +9,9 @@ import retrofit2.http.Path
 import retrofit2.http.Url
 
 interface LeaguesApi {
-    @GET
-    fun getLeagues(@Url url: String): Call<LeaguesNet>
+    @GET(ApiEndpoints.GET_LEAGUES)
+    fun getLeagues(): Call<LeaguesNet>
 
-    @GET
-    fun getStandings(@Url url: String, @Path("id") id: String): Call<SeasonNet>
+    @GET(ApiEndpoints.GET_STANDINGS)
+    fun getSeason(@Path("id") id: String): Call<SeasonNet>
 }

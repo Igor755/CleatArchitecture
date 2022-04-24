@@ -11,9 +11,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class StandingsNetSource (private val leaguesApi: LeaguesApi) {
-    fun getStandings(id : String, onComplete: (SeasonModel?) -> Unit, onError: (Exception) -> Unit?) {
-        leaguesApi.getStandings(ApiEndpoints.GET_STANDINGS, id).enqueue(object : Callback<SeasonNet> {
+class SeasonNetSource (private val leaguesApi: LeaguesApi) {
+    fun getSeason(id : String, onComplete: (SeasonModel?) -> Unit, onError: (Exception) -> Unit?) {
+        leaguesApi.getSeason(id).enqueue(object : Callback<SeasonNet> {
             override fun onFailure(call: Call<SeasonNet>, t: Throwable) {
                 onError(NetworkErrorException())
             }

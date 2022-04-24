@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/offset_16"
+    android:layout_marginTop="@dimen/offset_20"
+    android:layout_marginEnd="@dimen/offset_16"
+    android:layout_marginBottom="@dimen/offset_10"
+    android:background="@drawable/bg_rounded_item_white"
+    android:elevation="@dimen/offset_4"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/ivSeason"
+            android:layout_width="130dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="@dimen/offset_6"
+            android:layout_marginBottom="@dimen/offset_6"
+            android:adjustViewBounds="true"
+            android:background="@drawable/bg_rounded_photo"
+            android:scaleType="centerCrop" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_marginStart="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/offset_16"
+            android:paddingEnd="0dp">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/headline_3"
+                android:textStyle="bold"
+                tools:text="Турция 2020" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvWins"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/offset_8"
+                    android:text="Wins: "
+                    android:textSize="@dimen/headline_4" />
+
+                <TextView
+                    android:id="@+id/tvWinsNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/offset_8"
+                    android:text="44"
+                    android:textSize="@dimen/headline_4" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvLosses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/offset_8"
+                    android:text="Losses: "
+                    android:textSize="@dimen/headline_4" />
+
+                <TextView
+                    android:id="@+id/tvLossesNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/offset_8"
+                    android:text="44"
+                    android:textSize="@dimen/headline_4" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/offset_8"
+                    android:text="Ties: "
+                    android:textSize="@dimen/headline_4" />
+
+                <TextView
+                    android:id="@+id/tvTiesNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/offset_8"
+                    android:text="44"
+                    android:textSize="@dimen/headline_4" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTotalPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/offset_8"
+                    android:text="Total Point: "
+                    android:textSize="@dimen/headline_4" />
+
+                <TextView
+                    android:id="@+id/tvTotalPointNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/offset_8"
+                    android:text="44"
+                    android:textSize="@dimen/headline_4" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/offset_8"
+                    android:text="Games Played: "
+                    android:textSize="@dimen/headline_4" />
+
+                <TextView
+                    android:id="@+id/tvGamesPlayed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/offset_8"
+                    android:text="44"
+                    android:textSize="@dimen/headline_4" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class SeasonNet(
     @SerializedName("status")
-    val status: String,
+    val status: Boolean,
     @SerializedName("data")
     val data: SeasonDetailNet
 )

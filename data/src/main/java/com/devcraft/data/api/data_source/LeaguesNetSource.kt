@@ -14,7 +14,7 @@ import retrofit2.Response
 class LeaguesNetSource (private val leaguesApi: LeaguesApi) {
 
     fun getLeagues(onComplete: (LeaguesModel?) -> Unit, onError: (Exception) -> Unit?) {
-        leaguesApi.getLeagues(ApiEndpoints.GET_LEAGUES).enqueue(object : Callback<LeaguesNet> {
+        leaguesApi.getLeagues().enqueue(object : Callback<LeaguesNet> {
                 override fun onFailure(call: Call<LeaguesNet>, t: Throwable) {
                     onError(NetworkErrorException())
                 }

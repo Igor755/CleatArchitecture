@@ -16,11 +16,11 @@ data class StatNet(
     @SerializedName("type")
     val type: String,
     @SerializedName("value")
-    val value: String,
+    val value: Int,
     @SerializedName("displayValue")
-    val displayValue: Int,
+    val displayValue: String,
     @SerializedName("id")
-    val id: String,
+    val id: String?,
     @SerializedName("summary")
-    val summary: String
+    val summary: String?
 )

@@ -84,7 +84,7 @@ fun List<Logo>.mapToLogo() = this.mapTo(
 )
 
 
-fun Standing.mapStading() = StandingModel(team.mapToTeam(), note.map(), stats.mapToStat())
+fun Standing.mapStading() = StandingModel(team?.mapToTeam(), note?.map(), stats?.mapToStat())
 
 fun Team.mapToTeam() = TeamModel(
     id,
@@ -113,7 +113,7 @@ fun Stat.map() = StatModel(
     summary
 )
 
-fun Note.map() = NoteModel(color, description.mapLeagues(), rank)
+fun Note.map() = NoteModel(color, description, rank)
 
 
 
@@ -146,7 +146,7 @@ fun List<LogoModel>.mapToLogoModel() = this.mapTo(
 )
 
 
-fun StandingModel.mapStading() = Standing(team.mapToTeam(), note.map(), stats.mapToStatModel())
+fun StandingModel.mapStading() = Standing(team?.mapToTeam(), note?.map(), stats?.mapToStatModel())
 
 fun TeamModel.mapToTeam() = Team(id, uid, location, name, abbreviation, displayName, shortDisplayName, isActive, logos.mapToLogoModel())
 
@@ -154,4 +154,4 @@ fun LogoModel.map() = Logo(href, width, height, alt,rel, lastUpdated)
 
 fun StatModel.map() = Stat(name, displayName, shortDisplayName, description, abbreviation, type, value, displayValue, id, summary)
 
-fun NoteModel.map() = Note(color, description.mapLeaguesModel(), rank)
+fun NoteModel.map() = Note(color, description, rank)

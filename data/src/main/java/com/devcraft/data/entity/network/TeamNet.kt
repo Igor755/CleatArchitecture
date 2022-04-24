@@ -10,14 +10,14 @@ data class TeamNet (
     @SerializedName("location")
     val location: String,
     @SerializedName("name")
-    val name: Int,
+    val name: String,
     @SerializedName("abbreviation")
     val abbreviation: String,
     @SerializedName("displayName")
-    val displayName: Int,
+    val displayName: String,
     @SerializedName("shortDisplayName")
-    val shortDisplayName: Int,
+    val shortDisplayName: String,
     @SerializedName("isActive")
-    val isActive: Int,
+    val isActive: Boolean,
     @SerializedName("logos")
     val logos: List<LogoNet>)

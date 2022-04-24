@@ -7,8 +7,8 @@ data class StatModel(
     val description: String,
     val abbreviation: String,
     val type: String,
-    val value: String,
-    val displayValue: Int,
-    val id: String,
-    val summary: String
+    val value: Int,
+    val displayValue: String,
+    val id: String?,
+    val summary: String?
 )
